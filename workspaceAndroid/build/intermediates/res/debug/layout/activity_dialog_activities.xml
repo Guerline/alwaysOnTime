@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:weightSum="8"
+    tools:context=".DialogActivities" >
+
+		<ListView 
+			android:id="@android:id/list"
+			android:layout_width="fill_parent"
+			android:layout_height="0dp"
+			android:layout_weight="7"
+		>
+
+
+		</ListView>
+
+		
+	</LinearLayout>
+
+	
+<!-- From: file:/C:/Users/Guerline/Documents/myMorningRoutine/workspaceAndroid/res/layout/activity_dialog_activities.xml -->

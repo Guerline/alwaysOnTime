@@ -1,0 +1,140 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".ActivityEditActivity"
+     >
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".ActivityEditActivity"
+    >
+   
+
+    <TextView
+        android:id="@+id/textTitleTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_title" />
+
+    <EditText
+        android:id="@+id/editTextTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textTitleTitle"
+        android:layout_below="@+id/textTitleTitle"
+        android:maxLines="1"
+        android:inputType="text"
+        android:layout_marginTop="3dp"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textTitleDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textTitleTitle"
+        android:layout_below="@+id/editTextTitle"
+        android:layout_marginTop="10dp"
+        android:text="@string/activity_description"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:id="@+id/editTextDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textTitleTitle"
+        android:layout_below="@+id/textTitleDescription"
+        android:inputType="textCapCharacters"
+        android:layout_marginTop="3dp"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	<TextView
+        android:id="@+id/textTitleDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textTitleTitle"
+        android:layout_below="@+id/editTextDescription"
+        android:layout_marginTop="10dp"
+        android:text="@string/activity_duration"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+   <!-- <EditText
+        android:id="@+id/editTextDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textTitleTitle"
+        android:layout_below="@+id/textTitleDuration"
+        android:layout_marginTop="3dp"
+        android:textAppearance="?android:attr/textAppearanceMedium" /> -->
+
+	<NumberPicker
+	    android:id="@+id/editTextDuration"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignLeft="@+id/textTitleTitle"
+	    android:layout_alignRight="@+id/daysTable"
+	    android:layout_below="@+id/textTitleDuration"
+	    android:layout_marginTop="3dp" />
+	
+	
+	<TextView
+        android:id="@+id/textTitleDays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textTitleTitle"
+        android:layout_below="@+id/editTextDuration"
+        android:layout_marginTop="10dp"
+        android:text="@string/activity_days"
+  
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+     <TableLayout		 
+		 android:id="@+id/daysTable"
+		 android:layout_width="fill_parent"
+		 android:layout_height="wrap_content"
+		 android:layout_alignLeft="@+id/textTitleTitle"
+		 android:layout_below="@+id/textTitleDays"
+		 android:layout_marginTop="3dp"
+		 >
+		 <CheckBox android:id="@+id/checkMonday"
+			 android:layout_width="fill_parent"
+		 android:layout_height="wrap_content"
+		 android:text="@string/monday"/>
+		 <CheckBox android:id="@+id/checkTuesday"
+			 android:layout_width="fill_parent"
+			 android:layout_height="wrap_content"
+			 android:text="@string/tuesday"/>
+		 <CheckBox android:id="@+id/checkWednesday"
+			 android:layout_width="fill_parent"
+			 android:layout_height="wrap_content"
+			 android:text="@string/wednesday"/>
+		 <CheckBox android:id="@+id/checkThursday"
+			 android:layout_width="fill_parent"
+			 android:layout_height="wrap_content"
+			 android:text="@string/thursday"/>
+		 <CheckBox android:id="@+id/checkFriday"
+			 android:layout_width="fill_parent"
+			 android:layout_height="wrap_content"
+			 android:text="@string/friday"/>
+		 <CheckBox android:id="@+id/checkSaturday"
+			 android:layout_width="fill_parent"
+			 android:layout_height="wrap_content"
+			 android:text="@string/saturday"/>
+		 <CheckBox android:id="@+id/checkSunday"
+			 android:layout_width="fill_parent"
+			 android:layout_height="wrap_content"
+			 android:text="@string/sunday"/>
+	 </TableLayout>
+
+
+</RelativeLayout>
+</ScrollView>
+<!-- From: file:/C:/Users/Guerline/Documents/myMorningRoutine/workspaceAndroid/res/layout/activity_activity_edit.xml -->

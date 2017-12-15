@@ -1,0 +1,343 @@
+package com.mymorningroutine;
+import java.util.*;
+import android.widget.*;
+import com.mymorningroutine.obj.*;
+import android.view.*;
+import android.view.View.*;
+import android.content.*;
+import android.util.*;
+import android.os.*;
+import android.text.*;
+import android.preference.*;
+
+public class CurrentRoutineSectionFragment extends RefreshableFragment
+{
+
+	
+
+
+
+
+	/**
+	 * The fragment argument representing the section number for this
+	 * fragment.
+	 */
+	public static final String ARG_SECTION_NUMBER = "section_number";
+	public static final String INTENT_PARAM_ACTIVITY_ID = "ACTIVITY_ID";
+	public static final String INTENT_PARAM_ACTIVITY_LAST = "ACTIVITY_LAST";
+
+	private TextView textHelp;
+	private ListView listView;
+
+	
+	private  Boolean postponed;
+
+	private  CurrentRoutineSectionFragment routineFragment;
+
+	private RoutineActivitiesAdapter listAdapter;
+	private Routine currentRoutine;
+
+	private Button buttonLoadDailyActivities;
+
+	private Button buttonLoadRoutine;
+
+	private String TAG = "CurrentRoutineSectionFragment";
+
+
+	public CurrentRoutineSectionFragment()
+	{
+		super();
+	}
+	@Override
+	protected void setTextHelp(TextView textView)
+	{
+		this.textHelp = textView;
+	}
+
+	@Override
+	protected TextView getTextHelp()
+	{
+		return textHelp;
+	}
+	
+	@Override
+	protected void setListView(ListView inListView)
+	{
+		listView = inListView;
+	}
+
+	@Override
+	protected ListView getListView()
+	{
+		return listView;
+	}
+	
+	public void setCurrentRoutine(Routine routine)
+	{
+		currentRoutine = routine;
+	}
+
+	public void setActivitiesList(ArrayList<Activity> newactivitiesList)
+	{
+		MySingleton.getCurrentRoutineUtils().setActivitiesList(newactivitiesList);
+		
+		showListView();
+		RoutineActivitiesAdapter rta = (RoutineActivitiesAdapter) listView.getAdapter();
+		rta.notifyDataSetChanged();
+		listAdapter.notifyDataSetChanged();
+		listView.setAdapter(listAdapter);
+		listView.invalidate();
+		listView.refreshDrawableState();
+	}
+
+	public ArrayList<Activity> getActivitiesList()
+	{
+		return activitiesList;
+	}
+
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+							 Bundle savedInstanceState)
+	{
+
+		
+		rootView = inflater.inflate(R.layout.fragment_routine, null);
+		textHelpId = R.id.text_help;
+		initiateViews();
+		sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+		showHelpByDefault = sharedPreferences.getBoolean("prefShowTutorials", false);
+		if(showHelpByDefault){
+			showTextHelp();
+		}
+		if(activitiesList.size() != 0){
+			showListView();
+		}
+		listAdapter = new RoutineActivitiesAdapter(getActivity(), R.layout.list_routine_activity, activitiesList){
+
+			@Override
+			public void moveItem(Integer position, Integer positionNext)
+			{
+				CurrentRoutineSectionFragment.this.moveItem(position, positionNext);
+			}
+
+
+		};
+		listView.setAdapter(listAdapter);
+
+		indexCurrentActivity = 0;
+
+		buttonStartStopAlarm = (Button)rootView.findViewById(R.id.button_start_stop_alarm);
+		buttonStartStopAlarm.setOnClickListener(new OnClickListener() {
+
+				@Override
+				public void onClick(View p1)
+				{
+					if(activitiesList.size() > 0){
+						if (getString(R.string.start).equals(buttonStartStopAlarm.getText().toString()))
+						{
+							currentActivity  = activitiesList.get(indexCurrentActivity);
+							startStatusActivity();
+						}
+					}
+				}
+			});
+
+
+		buttonLoadDailyActivities = (Button)rootView.findViewById(R.id.button_load_daily_activities);
+		buttonLoadDailyActivities.setOnClickListener(new View.OnClickListener(){
+
+				@Override
+				public void onClick(View p1)
+				{
+					loadDailyActivities();
+				}
+
+
+			});
+
+		buttonLoadRoutine = (Button)rootView.findViewById(R.id.button_load_routine);
+		buttonLoadRoutine.setOnClickListener(new View.OnClickListener(){
+
+				@Override
+				public void onClick(View p1)
+				{
+					Intent intentRoutine = new Intent(getActivity(), DialogRoutines.class);
+					startActivityForResult(intentRoutine, 3);
+
+				}
+
+
+			});
+
+
+		routineFragment = this;
+		return rootView;
+	}
+
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data)
+	{
+		if ((requestCode == 3 ) && (data != null)){
+			Integer routineId = data.getIntExtra("routineId", 0);
+
+			if(routineId > 0){
+				Log.e("routine id", routineId + "");
+				Routine routine = Singleton.getRoutineTable(getActivity()).getRoutine(routineId);
+				setCurrentRoutine(routine);
+				setActivitiesList( routine.getActivities());
+			} 
+			super.onActivityResult(requestCode, resultCode, data);
+		}
+	}
+
+
+	private void notifyAdapterDataChanged(){
+		RoutineActivitiesAdapter rta = (RoutineActivitiesAdapter) listView.getAdapter();
+		rta.notifyDataSetChanged();
+		listView.setAdapter(rta);
+		//	listAdapter.notifyDataSetChanged();
+		//listView.setAdapter(listAdapter);
+		listView.invalidate();
+		listView.refreshDrawableState();
+	}
+
+
+	public void stopCurrentActivity()
+	{
+		if (currentActivity != null)
+		{
+			//	activitiesList.remove(currentActivity);
+			//	currentActivity = null;
+		}
+	}
+
+	public boolean startNextActivity()
+	{
+		stopCurrentActivity();
+		if( indexCurrentActivity == null || activitiesList == null){
+			return false;
+		}
+			
+		indexCurrentActivity++;
+
+
+		if (indexCurrentActivity < activitiesList.size())
+		{
+			currentActivity = activitiesList.get(indexCurrentActivity);
+			startStatusActivity();
+		} else{
+			endRoutine();
+		} 
+		return true;
+
+	}
+
+
+	public CurrentRoutineSectionFragment getInstance()
+	{
+		return routineFragment;
+	}
+
+	public void startStatusActivity()
+	{
+		Log.v(TAG, "startStatusActivity");
+		Class<?> itemActivity = AlarmStatusActivity.class;
+
+		Intent intentStatus = new Intent(getActivity(), itemActivity);
+		intentStatus.putExtra(CurrentRoutineSectionFragment.INTENT_PARAM_ACTIVITY_ID, currentActivity.getId());
+
+		intentStatus.putExtra(CurrentRoutineSectionFragment.INTENT_PARAM_ACTIVITY_LAST, (activitiesList.size() - 1 == indexCurrentActivity));
+		intentStatus.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		getActivity().startActivity(intentStatus);
+	}
+
+
+
+	public void loadDailyActivities()
+	{
+
+		activitiesList.clear();
+		
+		
+		for (Activity act : Singleton.getActivityTable(getActivity()).getActivities())
+		{
+			Day d = null;
+			switch (Calendar.getInstance().get(Calendar.DAY_OF_WEEK))
+			{
+				case Calendar.MONDAY:
+					d = Day.Mo;
+					break;
+				case Calendar.TUESDAY:
+					d = Day.Tu;
+					break;
+				case Calendar.WEDNESDAY:
+					d = Day.We;
+					break;
+				case Calendar.THURSDAY:
+					d = Day.Th;
+					break;
+				case Calendar.FRIDAY:
+					d = Day.Fr;
+					break;
+				case Calendar.SATURDAY:
+					d = Day.Sa;
+					break;
+				case Calendar.SUNDAY:
+					d = Day.Su;
+					break;
+			}
+			
+			if (act.getDays().contains(d))
+			{
+				activitiesList.add(act);
+			} 
+
+		}
+
+		showListView();
+		currentRoutine = null;
+		notifyAdapterDataChanged();
+
+
+
+	}	
+
+
+
+
+	public void endRoutine(){
+		indexCurrentActivity = 0;
+	}
+
+	public void moveItem(int position, int positionNext)
+	{
+		if ((position < positionNext && position < activitiesList.size() - 1) ||
+			(position > positionNext && position >= 1))
+		{
+			Activity         act = activitiesList.get(position);
+			activitiesList.remove(act);
+			activitiesList.add(positionNext, act);
+			notifyAdapterDataChanged();
+		}
+	}
+
+
+	@Override
+	public void refreshFragment()
+	{
+
+		if(activitiesList.size() > 0){
+			if(currentRoutine != null){
+				currentRoutine = Singleton.getRoutineTable(getActivity()).getRoutine(currentRoutine.getId());
+				setActivitiesList( currentRoutine.getActivities());
+			}else{
+				loadDailyActivities();
+			}
+
+		}
+
+	}
+
+
+
+}

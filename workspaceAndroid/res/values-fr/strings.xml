@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AlwaysOnTime</string>
+    <string name="settings">Réglages</string>
+    <string name="title_empty">Vous devez définir un titre.</string>
+    <string name="title_current_routine">Activités du jour</string>
+    <string name="title_section3">Section 3</string>
+    <string name="title_routines">Listes</string>
+    <string name="title_activities">Activités</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="action_new_activity">Nouvelle Activité</string>
+    <string name="action_new_routine">Nouvelle Liste</string>
+    <string name="title_activity_activity_detail">ActivityDetailActivity</string>
+    <string name="title_activity_activity_edit">ActivityEditActivity</string>
+    <string name="activity_title">Titre</string>
+    <string name="activity_description">Description</string>
+    <string name="activity_duration">Durée (mins)</string>
+    <string name="activity_days">Jours</string>
+	<string name="activity_background">Fond d\'écran</string>
+	<string name="activity_alarm">Son</string>
+    <string name="action_save">Enregistrer</string>
+    <string name="action_edit">Modifier</string>
+	<string name="action_delete">Supprimer</string>
+    <string name="monday">Lundi</string>
+    <string name="tuesday">Mardi</string>
+    <string name="wednesday">Mercredi</string>
+    <string name="thursday">Jeudi</string>
+    <string name="friday">Vendredi</string>
+    <string name="saturday">Samedi</string>
+    <string name="sunday">Dimanche</string>
+    <string name="start">Commencer</string>
+    <string name="stop">Arrêter</string>
+    <string name="next_activity">Suivant</string>
+    <string name="done">J\'ai fini!!!!</string>
+    <string name="postpone">Repousser</string>
+    <string name="dring">Repousser</string>
+    <string name="up">+</string>
+    <string name="down">-</string>
+	<string name="yes">Oui</string>
+    <string name="action_load_daily_activities">Charger les activités du moment</string>
+    <string name="action_load_saved_routine">Charger une Liste</string>
+    <string name="title_activity_dialog_routine_activities">@string/title_activities</string>
+    <string name="hello_world">Hello world!</string>
+	<string name="title_notification_type">Type de notification</string>
+	<string name="title_postpone_time">Durée a repousser par défaut(mins)</string>
+	<string name="title_end_alarm_action">Fin de l\'alarme</string>
+	<string name="summary_end_alarm_action">Action to do when the alarm is done</string>
+	<string name="title_stop_alarm_method">Stop Alarm Method</string>
+	<string name="summary_stop_alarm_method">How to stop alarm</string>
+	<string name="pref_alarm">Réglage de l\'alarme</string>
+	<string name="pref_notification">Réglage de notification</string>
+	<string name="pref_application">Réglage de l\'application</string>
+	<string name="no">Non</string>
+	<string name="saved">Enregistré</string>
+	<string name="not_saved">Sauvegarde impossible</string>
+	<string name="cancel">Annuler</string>
+	<string name="add_activity">Ajouter une activité</string>
+	<string name="confirmation_delete_activity">Supprimer cette activité?</string>
+	<string name="confirmation_delete_routine">Supprimer cette routine?</string>
+	<string name="ok">Ok</string>
+	<string name="today">Aujourd\'hui</string>
+	<string name="message_not_saved">Sauvegarde impossible</string>
+	<string name="message_saved">@string/saved</string>
+	<string name="title_keep_screen_on">Garder l\'écran allumé</string>
+	<string name="warning_battery">Utilises plus de batterie</string>
+	<string name="filter_by_day">Filtrer sur le jour</string>
+	<string name="all_activities">Toutes les activités</string>
+	<string name="home_help"><![CDATA[&nbsp;Pour commencer votre liste,<br>
+								charger une liste d\'activités en cliquant sur le bouton de gauche,<br>
+								ou charger les activités du jour en cliquant sur le bouton de droite,<br>
+								puis cliques sur le bouton <bold>Commencer</bold>.<br>
+								Pour changer les activités de place, appuyer sur les bouton + et - .<br>
+								Si une activité a été changée sur la page des activités, appuyer sur le bouton en haut pour rafraîchir les activités.
+								Appuyer sur le bouton ? pour afficher/cacher l\'Aide.
+								]]></string>
+	<string name="activities_help"><![CDATA[Cliquer sur le bouton du dessous pour ajouter une activité.<br>
+	Si une activité a été changée, appuyer sur le bouton en haut pour rafraîchir les activités.<br>
+								Appuyer sur le bouton ? pour afficher/cacher l\'Aide.]]></string>
+	<string name="routines_help"><![CDATA[Cliquer sur le bouton du dessous pour ajouter une liste d\'activités.<br>
+	Si une liste d\'activités a été changée, appuyer sur le bouton en haut pour rafraîchir les listes d\'activités.<br>
+								Appuyer sur le bouton ? pour afficher/cacher l\'Aide.]]></string>
+	<string name="title_activity_about">Aide</string>
+	<string name="help_text"><![CDATA[<p>&nbsp;Cette application a été développée pour vous aider à faire ce dont vous avez besoin de faire dans les temps. Vous définissez une liste d\'activités que vous devez faire à la suite. En définissant  le temps de chaque activité, cette application vous permettra de vous notifier la fin de votre activité et passera à la suivante ou repoussera l\'activité en cours selon vos besoins.
+	Arrêtez de rater votre métro parce que vous avez pris trop de temps dans la douche. <br></p>
+	]]></string>
+	<string name="help_text1"><![CDATA[			<p>&nbsp;Pour commencer, allez sur le panneau des activités en glissant votre doigt sur la gauche  ou en glissant votre doigt sur la droite pour ouvrir le menu et cliquant sur "Activités". Créer des activités en cliquant sur le bouton en bas. Vous poouvez choisir le nom de l\'activité, les jours auquel l\'activité est généralement faite, le fond d\'écran lorsque l\'activité est en cours et le son de l\'alarme de fin d\'activité.	</p>]]></string>
+<string name="help_text2"><![CDATA[		&nbsp;Ensuite, aller sur le panneau des routines, en glissant votre doigt sur la gauche, créer une liste. Puis ouvrir la liste et y ajouter des activités. Vous pouveze ajouter supprimer et changer la position des activités. Les activités peuvent être ajoutés plusieurs fois dans la même liste.  Enregister la liste.]]></string>
+<string name="help_text3"><![CDATA[		 &nbsp;Retourner sur le panneau d\'Accueil. Cliquer sur le bouton des routines sur la gauche pour charger une liste ou cliquer sur le bouton de droite pour charger toutes les activités du jour. Ensuite, cliquer sur le bouton "Play" pour commencer les activités présentes dans le panneau.]]></string>
+	<string name="help_text4"><![CDATA[ &nbsp; Vous pouvez échanger entre le temps actuel et le compte à rebours de l\'activité lorsqu\'elle est en cours en cliquant sur le titire de l\'activité en haut de l\'application.]]></string>
+	<string name="help_text5"><![CDATA[ &nbsp;Repousser l\'activité si vous n\'avez pas encore fini en cliquant sur le bouton du milieu. Appuyer sur le bouton "Suivant" si vous êtes pret à passer à l\'activité suivante. Si vous n\'appuyez sur aucun bouton jusqu\'a la fin de l\'alarme, elle passera à l\'activié suivante ou repoussera automatiquement votre activité en fonction de ce que vous aurez choisi dans les réglages]]></string>
+	<string name="activity_volume">Volume</string>
+	<string name="activity_about_title">Tutoriel</string>
+
+</resources>

@@ -1,0 +1,94 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:weightSum="12"
+	android:background="@color/background_color"
+	android:id="@+id/fragment_routineLinearLayout"
+    tools:context=".MainActivity$CurrentRoutineSectionFragment" >
+    
+
+	>
+	
+	<RelativeLayout
+		android:layout_width="fill_parent"
+		android:layout_height="0dp"
+		android:layout_weight="11"
+	>
+	<TextView
+			android:id="@+id/text_help"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:textStyle="bold"
+			android:gravity="center"
+			android:textColor="#fff"
+			android:text="@string/home_help"
+			android:layout_alignParentTop="true"
+		android:visibility="invisible"
+		/> 
+<ListView 
+     android:id="@+id/@android:id/list"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+	android:layout_toEndOf="@+id/button_start_stop_alarm"
+	android:layout_marginTop="5dp"
+	android:layout_alignParentTop="true"
+	
+		>
+    
+
+</ListView>
+	</RelativeLayout>
+	
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="0dp"
+		android:weightSum="4"
+		android:background="#000"
+		android:textColor="#fff"
+		android:layout_weight="1"
+		android:layout_alignParentBottom="true"
+		android:orientation="horizontal"
+	>
+<!--
+		<Button 
+			android:id="@+id/button_load_routine"
+			android:layout_width="0dp"
+			android:layout_height="fill_parent"
+			android:layout_alignParentRight="true"
+			android:layout_alignRight="@dimen/activity_horizontal_margin"
+			android:drawableRight="@drawable/ic_action_refresh"
+			android:showAsAction="ifRoom"
+		 	android:background="@color/background_color"
+			android:textColor="@color/routines_background"
+			android:text="@string/title_routines"
+			android:layout_weight="3"
+		/> -->
+
+
+		<Button 
+			android:id="@+id/button_start_stop_alarm"
+			android:layout_width="0dp"
+			android:layout_height="fill_parent"
+			android:showAsAction="ifRoom"
+			android:text="@string/start" 
+			android:background="@color/background_color"
+			android:textColor="@color/start_button_color"
+            android:layout_weight="4"
+		/> 
+	
+	<!--	<Button 
+			android:id="@+id/button_load_daily_activities"
+			android:layout_width="0dp"
+			android:layout_height="fill_parent"
+			android:drawableLeft="@drawable/ic_action_refresh"
+			android:showAsAction="ifRoom"
+			android:background="@color/background_color"
+			android:textColor="@color/activities_background"
+			android:text="@string/today"
+            android:layout_weight="3"
+		/>-->
+	</LinearLayout>
+</LinearLayout>
+<!-- From: file:/C:/Users/Guerline/Documents/myMorningRoutine/workspaceAndroid/res/layout/fragment_routine.xml -->

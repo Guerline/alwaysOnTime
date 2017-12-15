@@ -1,0 +1,120 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+	android:orientation="vertical"
+	android:background="#000"
+    tools:context=".SettingsActivity" >
+
+<LinearLayout
+	android:id="@+id/button_notification_type"
+	android:layout_width="fill_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"	>
+    <TextView
+        android:id="@+id/text_notification_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:textColor="#fff"
+        android:text="@string/title_notification_type" />
+
+    <TextView
+        android:id="@+id/value_notification_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:textColor="#fff"
+        android:layout_alignLeft="@+id/text_notification_type"
+        android:layout_below="@+id/text_notification_type"
+        android:layout_marginTop="3dp"
+
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+</LinearLayout>
+
+
+<LinearLayout
+	android:id="@+id/button_postpone_time"
+	android:layout_width="fill_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:layout_below="@+id/button_notification_type"
+	>
+    <TextView
+        android:id="@+id/text_postpone_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+		android:textColor="#fff"
+        android:text="@string/title_postpone_time"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/value_postpone_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/text_postpone_time"
+        android:layout_below="@+id/text_postpone_time"
+        android:layout_marginTop="3dp"
+		android:textColor="#fff"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+</LinearLayout>
+
+	<LinearLayout
+		android:id="@+id/button_end_alarm_action"
+		android:layout_width="fill_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		android:layout_below="@+id/button_postpone_time"
+	>
+		<TextView
+			android:id="@+id/text_end_alarm_action"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10dp"
+			android:textColor="#fff"
+			android:text="@string/title_end_alarm_action"
+			android:textAppearance="?android:attr/textAppearanceSmall" />
+
+		<TextView
+			android:id="@+id/value_end_alarm_action"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignLeft="@+id/text_end_alarm_action"
+			android:layout_below="@+id/text_end_alarm_action"
+			android:layout_marginTop="3dp"
+			android:textColor="#fff"
+			android:textAppearance="?android:attr/textAppearanceMedium" />
+	</LinearLayout>
+	<LinearLayout
+		android:id="@+id/button_stop_alarm_action"
+		android:layout_width="fill_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		android:layout_below="@+id/button_end_alarm_action"
+	>
+		<TextView
+			android:id="@+id/text_stop_alarm_method"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10dp"
+			android:textColor="#fff"
+			android:text="@string/title_stop_alarm_method"
+			android:textAppearance="?android:attr/textAppearanceSmall" />
+
+		<TextView
+			android:id="@+id/value_stop_alarm_method"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignLeft="@+id/text_end_alarm_action"
+			android:layout_below="@+id/text_end_alarm_action"
+			android:layout_marginTop="3dp"
+			android:textColor="#fff"
+			android:textAppearance="?android:attr/textAppearanceMedium" />
+	</LinearLayout>
+	
+	
+</LinearLayout>
+<!-- From: file:/C:/Users/Guerline/Documents/myMorningRoutine/workspaceAndroid/res/layout/activity_settings.xml -->

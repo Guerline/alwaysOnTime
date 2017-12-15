@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <drawable name="home_actionbar_background">#770000ff</drawable>
+	<drawable name="activities_background">#1166bb</drawable>
+	<drawable name="routines_background">#00ccff</drawable>
+    <color name="list_highlight_color">#ccc</color>
+	<color name="title_color">#770000ff</color>
+	<color name="start_button_color">#0b0</color>
+	<color name="button_color">#cccccc</color>
+	<color name="text_color">#fff</color>
+	<color name="background_color">#999999</color>
+	<color name="activities_background">#1166bb</color>
+	<color name="routines_background">#00ccff</color>
+	<color name="colorPrimary">#125688</color>
+    <color name="colorPrimaryDark">#125688</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+    <color name="colorAccent">#c8e8ff</color>
+</resources>

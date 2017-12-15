@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/pref_application" >
+        
+		<ListPreference 
+            android:key="prefNotificationType"
+            android:entries="@array/notificationType" 
+            android:entryValues="@array/notificationTypeValues"
+            android:title="@string/title_notification_type"
+			android:defaultValue="1"/>
+		<CheckBoxPreference 
+            android:key="prefKeepScreenOn"
+			android:title="@string/title_keep_screen_on"
+			android:summary="@string/warning_battery"/> 
+<!--	<CheckBoxPreference 
+		android:key="prefShowTutorials"
+		android:title="@string/show_tutorials_title"
+		android:summary="@string/show_tutorials_summary"/>
+		
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_alarm" > -->
+		<!--<EditTextPreference 
+			android:title="@string/title_postpone_time" 
+			android:key="prefPostponeTime"
+			 /> -->
+		
+		<ListPreference
+            android:key="prefEndAlarmAction"
+            android:entries="@array/endAlarmAction" 
+            android:entryValues="@array/endAlarmActionValues"
+            android:title="@string/title_end_alarm_action" 
+			android:defaultValue="1"/>
+        
+
+    <!--    <ListPreference
+            android:key="prefStopAlarmMethod"
+            android:entries="@array/stopAlarmMethod" 
+            android:entryValues="@array/stopAlarmMethodValues"
+            android:title="@string/title_stop_alarm_method" /> -->
+
+   </PreferenceCategory>
+
+</PreferenceScreen>
+<!-- From: file:/C:/Users/Guerline/Documents/myMorningRoutine/workspaceAndroid/res/xml/settings.xml -->

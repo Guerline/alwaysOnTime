@@ -1,0 +1,272 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+	android:background="@color/background_color"
+	android:orientation="vertical"
+	android:weightSum = "12">
+	<ScrollView 
+		android:layout_width="fill_parent"
+		android:layout_height="0dp"
+		android:fillViewport="true"
+		android:layout_weight="11"
+	>
+	<LinearLayout
+		android:orientation="vertical"
+		android:paddingLeft="@dimen/activity_horizontal_margin"
+		android:paddingRight="@dimen/activity_horizontal_margin"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_weight="10">
+	<LinearLayout
+		android:orientation="vertical"
+		android:paddingTop="2dp"
+		
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/layout_title">
+		
+    <TextView
+        android:id="@+id/textTitleTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_title"
+		android:textAppearance="?android:attr/textAppearanceMedium"	/>
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textTitleTitle"
+        android:layout_alignStart="@+id/textTitleTitle"
+        android:layout_below="@+id/textTitleTitle"
+        android:layout_marginTop="3dp"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+		
+	</LinearLayout>
+	
+	<LinearLayout
+		android:orientation="vertical"
+		android:paddingTop="2dp"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		
+		android:id="@+id/layout_description">
+    <TextView
+        android:id="@+id/textTitleDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textTitleTitle"
+        android:layout_below="@+id/textTitle"
+        android:layout_marginTop="10dp"
+        android:text="@string/activity_description"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <TextView
+        android:id="@+id/textDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textTitleTitle"
+        android:layout_below="@+id/textTitleDescription"
+        android:layout_marginTop="3dp"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+    </LinearLayout>
+	
+	<LinearLayout
+		android:orientation="vertical"
+		android:paddingTop="2dp"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		
+		android:id="@+id/layout_duration">
+       <TextView
+        android:id="@+id/textTitleDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textTitleTitle"
+        android:layout_below="@+id/textDescription"
+        android:layout_marginTop="10dp"
+        android:text="@string/activity_duration"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <TextView
+        android:id="@+id/textDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textTitleTitle"
+        android:layout_below="@+id/textTitleDuration"
+        android:layout_marginTop="3dp"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+    </LinearLayout>
+	
+	<LinearLayout
+		android:orientation="vertical"
+		android:paddingTop="2dp"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+
+		android:id="@+id/layout_postpone_time">
+		<TextView
+			android:id="@+id/textTitlePostponeTime"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignLeft="@+id/textTitleTitle"
+			android:layout_marginTop="10dp"
+			android:text="@string/title_postpone_time"
+			android:textAppearance="?android:attr/textAppearanceMedium" />
+
+		<TextView
+			android:id="@+id/textPostponeTime"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignLeft="@+id/textTitleTitle"
+			android:layout_marginTop="3dp"
+			android:textAppearance="?android:attr/textAppearanceSmall" />
+    </LinearLayout>
+	<LinearLayout
+		android:orientation="vertical"
+		android:paddingBottom="2dp"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/layout_days"		>
+       <TextView
+        android:id="@+id/textTitleDays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textTitleTitle"
+        android:layout_below="@+id/textDuration"
+        android:layout_marginTop="10dp"
+        android:text="@string/activity_days"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <TextView
+        android:id="@+id/textDays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textTitleTitle"
+        android:layout_below="@+id/textTitleDays"
+        android:layout_marginTop="3dp"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+		</LinearLayout>
+		
+			<LinearLayout
+			android:id="@+id/layout_background"
+		android:orientation="vertical"
+		android:paddingBottom="2dp"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				>
+    <TextView
+        android:id="@+id/textTitleBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textTitleTitle"
+        android:layout_below="@+id/textDays"
+        android:layout_marginTop="10dp"
+        android:text="@string/activity_background"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+				<TextView
+					android:id="@+id/textBackground"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignLeft="@+id/textTitleTitle"
+					android:layout_below="@+id/textTitleBackground"
+					android:layout_marginTop="3dp"
+					android:textAppearance="?android:attr/textAppearanceSmall" />
+    </LinearLayout>
+	
+		<LinearLayout
+			android:id="@+id/layout_alarm"
+			android:orientation="vertical"
+			android:paddingBottom="2dp"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+		>
+			<TextView
+				android:id="@+id/textTitleAlarm"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignLeft="@+id/textTitleTitle"
+				android:layout_below="@+id/textDays"
+				android:layout_marginTop="10dp"
+				android:text="@string/activity_alarm"
+				android:textAppearance="?android:attr/textAppearanceMedium" />
+
+			<TextView
+				android:id="@+id/textAlarm"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignLeft="@+id/textTitleTitle"
+				android:layout_below="@+id/textTitleAlarm"
+				android:layout_marginTop="3dp"
+				android:textAppearance="?android:attr/textAppearanceSmall" />
+		</LinearLayout>
+		
+		<LinearLayout
+			android:id="@+id/layout_volume"
+			android:orientation="vertical"
+			android:paddingBottom="2dp"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+		>
+			<TextView
+				android:id="@+id/textTitleVolume"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignLeft="@+id/textTitleTitle"
+				android:layout_marginTop="10dp"
+				android:text="@string/activity_volume"
+				android:textAppearance="?android:attr/textAppearanceMedium" />
+
+			<TextView
+				android:id="@+id/textVolume"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignLeft="@+id/textTitleTitle"
+				android:layout_below="@+id/textTitleVolume"
+				android:layout_marginTop="3dp"
+				android:textAppearance="?android:attr/textAppearanceSmall" />
+		</LinearLayout>
+	</LinearLayout>
+	</ScrollView>
+		
+		<LinearLayout
+		    android:id="@+id/layout_button_ad"
+			android:layout_width="fill_parent"
+			android:layout_height="0dp"
+			android:background="#000"
+			android:textColor="#fff"
+			android:layout_weight="1"
+			android:weightSum="2"
+			android:orientation="horizontal"
+		> 
+			<Button 
+				android:id="@+id/button_cancel"
+				android:layout_width="0dp"
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+				android:text="@string/cancel" 
+				android:background="#000"
+				android:textColor="#fff"
+				android:padding="5dp"
+				android:drawableLeft="@drawable/ic_action_cancel"
+			/>
+			<Button 
+				android:id="@+id/button_save_activity"
+				android:layout_width="0dp"
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+				android:text="@string/action_save" 
+				android:background="#000"
+				android:textColor="#fff"
+				android:padding="5dp"
+				android:drawableLeft="@drawable/ic_action_save"
+			/>
+
+			
+		</LinearLayout>
+	
+	</LinearLayout>
+
+<!-- From: file:/C:/Users/Guerline/Documents/myMorningRoutine/workspaceAndroid/res/layout/activity_activity_detail.xml -->
