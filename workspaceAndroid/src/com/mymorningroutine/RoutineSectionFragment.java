@@ -6,6 +6,7 @@ import com.mymorningroutine.obj.Routine;
 import android.content.Intent;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,7 +18,6 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-//import android.support.design.widget.FloatingActionButton;
 
 public class RoutineSectionFragment extends RefreshableFragment
 {
@@ -28,7 +28,7 @@ public class RoutineSectionFragment extends RefreshableFragment
 		private ArrayList<Routine> routinesList;
 		protected static TextView textHelp;
 		protected static ListView listView;
-	private Button createRoutineButton;
+	private FloatingActionButton createRoutineButton;
 	private FragmentActivity context;
 	private String TAG = "RoutineSectionFragment";
 
@@ -66,7 +66,7 @@ public class RoutineSectionFragment extends RefreshableFragment
 								 Bundle savedInstanceState)
 		{
 			rootView = inflater.inflate(R.layout.fragment_routines, null);
-			createRoutineButton = (Button) rootView.findViewById(R.id.button_add_routine);
+			createRoutineButton = (FloatingActionButton) rootView.findViewById(R.id.button_add_routine);
 			
 
 				
